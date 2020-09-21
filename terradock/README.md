@@ -15,8 +15,15 @@ The tags follow this pattern: `tf_<terraform_version>-tg_<terragrunt_version>`
 
 
 ## Usage
+Terragrunt needs read & write access to your local terragrunt directory. To achieve this,
+we need to mount the local dir as a volume on the containers `/apps` dir.
 ```bash
-docker run -v $(pwd):/apps -it terradock:<relevant_tag> $@
+docker run -v /your/local/path:/apps -it terradock:<relevant_tag> --help
+```
+
+I usually run this from within my local terragrunt dir and therefore do the following:
+```bash
+docker run -v $(pwd):/apps -it terradock:tf_0.12.29-tg_v0.22.5 plan --terragrunt-working-dir some/relative/path
 ```
 
 I aliased the following function I wrote as terragrunt:
