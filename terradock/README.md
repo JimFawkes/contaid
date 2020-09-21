@@ -1,7 +1,7 @@
 # Terradock
 Terragrunt containerized to easily switch between versions
 
-This is influenced by: []()
+This is influenced by: [alpine-docker/terragrunt](https://github.com/alpine-docker/terragrunt)
 
 ## Usage
 ```bash
