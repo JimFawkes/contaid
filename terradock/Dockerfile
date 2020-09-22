@@ -6,9 +6,9 @@ ARG terragrunt
 ENV TERRAFORM=$terraform
 ENV TERRAGRUNT=$terragrunt
 
-RUN apk add --update --no-cache bash git openssh curl
+RUN apk add --update --no-cache bash git openssh
 
-RUN curl -o /usr/local/bin/terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRUNT}/terragrunt_linux_amd64
+ADD https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRUNT}/terragrunt_linux_amd64 /usr/local/bin/terragrunt
 RUN chmod +x /usr/local/bin/terragrunt
 
 RUN echo "terraform: ${TERRAFORM}"
