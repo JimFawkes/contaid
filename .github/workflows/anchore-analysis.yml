@@ -18,12 +18,11 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build --build-arg terraform=0.12.29 --build-arg terragrunt=v0.21.13 . --file terradock/Dockerfile --tag localbuild/testimage:latest      
+      run: docker build --build-arg terraform=0.12.29 --build-arg terragrunt=v0.21.13 . --file terradock/Dockerfile --tag localbuild/terradock:anchore-scan      
     - name: Run the local Anchore scan action itself with GitHub Advanced Security code scanning integration enabled
       uses: anchore/scan-action@v2
       with:
-        image-reference: "localbuild/testimage:latest"
-        dockerfile-path: "terradock/Dockerfile"
+        image: "localbuild/terradock:anchore-scan"
         acs-report-enable: true
     - name: Upload Anchore Scan Report
       uses: github/codeql-action/upload-sarif@v1
