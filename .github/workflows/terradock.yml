@@ -15,6 +15,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build
+      if: github.ref != 'refs/heads/master'
       run: |
         cd terradock
         bash build_or_push.sh build
@@ -26,7 +27,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Push
+    - name: Build and Push
       if: github.ref == 'refs/heads/master'
       run: |
         cd terradock
