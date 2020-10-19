@@ -22,7 +22,7 @@ docker run -v /your/local/path:/apps -it terradock:<relevant_tag> --help
 
 I usually run this from within my local terragrunt dir and therefore do the following:
 ```bash
-docker run -v $(pwd):/apps -it terradock:tf_0.12.29-tg_v0.22.5 plan --terragrunt-working-dir some/relative/path
+docker run -v $(pwd):/apps -it terradock:tf_0.13.1-tg_v0.21.13 plan --terragrunt-working-dir some/relative/path
 ```
 
 I aliased the following function I wrote:
