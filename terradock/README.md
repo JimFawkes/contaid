@@ -8,7 +8,7 @@ This is influenced by: [alpine-docker/terragrunt](https://github.com/alpine-dock
 
 ## Versions
 There are multiple version combinations pushed to DockerHub.
-The different combinations can be found [here](./Versions.txt).
+The different combinations can be found [here](./VERSIONS.txt).
 The tags follow this pattern: `tf_<terraform_version>-tg_<terragrunt_version>`
 
 ***Note:** If you need a different combination of versions, open a PR or an Issue.*
