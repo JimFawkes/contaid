@@ -22,5 +22,8 @@ push () {
 
 echo "Build and Push terradock images"
 
-build
-push
+if [[ "$1" == "build" ]]; then
+	build
+elif [[ "$1" == "push" ]]; then
+	push
+fi
