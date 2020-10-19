@@ -18,7 +18,7 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build --build-arg terraform=0.12.29 --build-arg terragrunt=v0.21.13 . --file terradock/Dockerfile --tag localbuild/terradock:anchore-scan      
+      run: docker build --build-arg terraform=0.13.1 --build-arg terragrunt=v0.21.13 . --file terradock/Dockerfile --tag localbuild/terradock:anchore-scan
     - name: Run the local Anchore scan action itself with GitHub Advanced Security code scanning integration enabled
       uses: anchore/scan-action@v2
       with:
