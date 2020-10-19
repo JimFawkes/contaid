@@ -31,5 +31,5 @@ jobs:
       if: github.ref == 'refs/heads/master'
       run: |
         cd terradock
-        bash build_or_push.sh push
+        bash build_or_push.sh build-and-push
 
